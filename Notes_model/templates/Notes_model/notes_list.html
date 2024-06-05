@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .hovcard{
+        transition: transform(0.5s ease-in-out);
+    }
+    .hovcard:hover{
+        transform: scale(1.02);   
+    }
+    .viewnote:hover{
+        background-color: rgb(18, 120, 209);
+    }
+
+
+</style>
+<div class="row">
+    <div class="col">
+        <div class="notes_list_heading text-center mb-5">
+            <h1 class="fs-4 fw-bold">These are the notes</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {% for note in notes %}
+        <div class="col-md-4">
+            <div class="card mb-3 hovcard rounded-3">
+                <div class="card-header d-flex justify-content-between align-items-center" >
+                    <span style="font-family: sans-serif;font-weight: bold;">{{ note.title }}</span>
+                    <span class="text-muted fw-bold" style="margin-left: 60px; font-size:11px;">{{ note.created|date:"F j, Y, g:i a" }}</span>
+                 </div>
+                <div class="card-body">
+                    <p>{{note.text|truncatechars:7}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'Notes_model.detail' pk=note.id %}" class="btn btn-info btn-sm viewnote rounded-2">View Note</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

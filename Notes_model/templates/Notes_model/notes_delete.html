@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="confirm-message text-center">
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>Are you sure you want to delete? <q>{{notes.title}}</q></p>
+                <p>This action can't be undone.</p>
+                <input type="submit" class="btn btn-sm btn-danger" value="Confirm">
+                <a href="{% url 'Notes_model.list' %}" class="btn btn-sm btn-secondary" style="width: 66px;">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header fw-bold text-center">Login</div>
+            <div class="card-body" style="padding-left: 70px;height: 230px;">
+                <form action="" method="post" style="margin-top: 38px;">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" class="btn btn-sm btn-success" style="margin-left: 115px;margin-top: 6px;" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

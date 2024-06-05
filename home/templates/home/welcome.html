@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, white 75%, rgba(75, 70, 70, 0.5));
+    }
+    .heading{
+        font-size: 82px;
+        font-weight: 800;
+        font-family: Arial, sans-serif;
+        margin-top: 90px;
+    }
+    .para{
+        font-family: Arial, sans-serif;
+        font-size: 29px;
+        font-weight: bold;
+        margin-top: -6px;
+    }
+    .para2{
+        font-size: 13px;
+        font-family: Arial, sans-serif;
+        margin-top: 17px;
+
+    }
+    .home-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }
+
+</style>
+<div class="row" >
+    <div class="col" >
+        <div class="home-holder text-center">
+            <h1 class="heading">Welcome</h1>
+            <p class="para"> To Smart Notes</p>
+            <p class="para2 text-muted">Keep your thoughts organized and easily accessible with our intuitive Notes app.Whether you're jotting down quick ideas,<br> making detailed plans,or keeping track of important information, our app provides a seamless and user-friendly<br>experience.Stay productive and never miss a detail with our powerful and efficient Notes app </p>
+
+            <a href="{% url 'Notes_model.list' %}" class="btn btn-success btn-sm rounded-4" style="margin-top: 10px;margin-top: 10px;height: 32px;width: 152px;">Go to Smart Notes</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
